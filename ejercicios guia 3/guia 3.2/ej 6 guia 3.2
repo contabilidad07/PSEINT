@@ -1,0 +1,23 @@
+
+	Algoritmo principal
+		
+		Definir n Como Entero
+		
+		Escribir Sin Saltar "Ingresar un número entero: "
+		Leer n
+		
+		Escribir "La suma es: ", sumaEnteros(n)
+		
+FinAlgoritmo
+
+Funcion resultado = sumaEnteros (n)
+    
+    Definir resultado Como Entero
+    
+    Si n <> 0 Entonces
+        
+        resultado = n + sumaEnteros (n-1)
+        
+    FinSi
+    
+FinFuncion

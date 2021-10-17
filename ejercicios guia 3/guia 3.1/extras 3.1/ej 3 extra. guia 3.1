@@ -1,0 +1,28 @@
+//Crear un programa que dibuje una escalera de números, donde cada línea de números comience en uno y termine en el número de la línea. Solicitar la altura de la escalera al
+//usuario al comenzar. Ejemplo: si se ingresa el número 3:
+		//	1
+		//12
+		//123
+
+Algoritmo subprogramas_extra3
+    definir numero1 Como Entero
+	
+	
+    Escribir "este programa formara una escalera LITERAL de numeros ingrese el numero final"
+    leer numero1
+	
+    Escalera_numeros(numero1)
+	
+FinAlgoritmo
+
+SubProceso Escalera_numeros (numero1 Por Referencia)
+    Definir i Como Entero
+    definir escalator Como Caracter
+    escalator= ""
+    i=1
+	
+    para i<-1 hasta numero1 Hacer
+        escalator= escalator + ConvertirATexto(i)
+        Escribir escalator
+    FinPara
+	fin subproceso

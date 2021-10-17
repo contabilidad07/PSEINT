@@ -1,0 +1,34 @@
+Algoritmo ej10_2b
+	//el bucle Para nos exige saber la cantidad de veces que necesitamos que se ejecute el código. Entonces, para el bucle externo (el primero), 
+	//necesitamos saber la cantidad de vendedeores. Para el interno (el segundo), necesitamos saber la cantidad de ventas de cada vendedor 
+	//y ahi tenemos los límites que necesitamos. Dentro de cada uno, tendremos que pedir los datos que hacen falta para hacer los calculos que nos pide el ejercicio.
+	
+	//Una forma de desarrollar el ejercicio es la siguiente:
+	
+	//Pedir la cantidad de vendedores.
+	//Para cada vendedor, preguntar su sueldo base y la cantidad de ventas realizadas.
+	//Para cada venta, preguntar el monto cobrado y acumularlo en un total de ventas.
+		//Después de tener el total de ventas, obtener lo que corresponde por comisiones.
+		//Calcular el sueldo total, es decir sueldo base + comisiones.
+	//Mostrar por pantalla los datos que creamos correspondientes.
+	definir i,cant_vendedores, cant_vtas,v  como entero
+	definir sueldo_base, importe_vta, suma como real
+	
+	escribir "ingrese cantidad de vendedores" //2
+	leer cant_vendedores
+	para i=1 hasta cant_vendedores con paso 1 Hacer
+		escribir " ingrese sueldo base empleado :", i
+		leer sueldo_base
+		suma=0
+		escribir " cantidad de ventas realizadas por empleado: ", i
+		leer cant_vtas
+		para v=1 hasta cant_vtas con paso 1 Hacer
+			escribir "ingrese el importe de la venta" " numero ",v
+			leer importe_vta
+				suma= suma+importe_vta
+		FinPara
+		escribir " el total de ventas realizadas por el vendedor", i ," es : " suma
+		escribir " las comisiones cobradas por el vendedor ", i, "es: " suma*0.10
+		escribir " el sueldo total cobrado por el vendedor " i, "es: " sueldo_base+ suma*0.10
+	fin para	
+FinAlgoritmo

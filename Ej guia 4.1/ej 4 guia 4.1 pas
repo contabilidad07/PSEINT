@@ -1,0 +1,50 @@
+///Realizar un programa que rellene un vector de tamaño N, con valores ingresados por el usuario. A continuación, 
+///se deberá crear una función que reciba el vector y devuelva el valor más grande del vector
+
+//El ejercicio 4 pide que hagas una función para buscar el mayor valor dentro del vector... Lo que tenes que hacer es pasarle a esa función como argumento el vector y el tamaño del mismo.
+//Después adentro de esa función lo que hice yo fue definir una nueva variable llamada "mayor" que me va a servir para guardar el mayor valor dentro del arreglo,
+//y la inicialicé con el valor que tiene el arreglo en la posición 0, es decir con el primer valor : mayor=vector(0)
+//Luego, debes crear un bucle 'para' para recorrer todo el arreglo, empezando i valiendo 0, hasta el tamaño del vector menos 1 ( ya que el tamaño es la cantidad de elementos que tiene el arreglo dentro,
+//pero las posiciones de los arreglos empiezan en 0, por lo que el último indice o posición será tamaño-1 )
+//Por último dentro del bucle, lo que hice yo fue poner un condicional y comparé el valor de 'mayor' con el del elemento dentro del vector en la posición en que se encuentra i en ese momento, 
+//y puse si vector(i) es mayor a la variable 'mayor' entonces mayor=vector(i)  ( Es decir Si vector(i) > mayor entonces... )... 
+//¿Por qué hice esto? Porque como 'mayor' empieza valiendo lo que vale el primer elemento del arreglo, si yo lo comparo con el siguiente elemento, y 
+//resulta que este elemento en la posición i es mayor al que estaba en la variable 'mayor', ahora el mayor valor es el elemento que está en esa posición, entonces mayor pasa a valer lo que vale ese elemento.
+//Esto se va a hacer sucesivamente hasta terminar de recorrer todos las posiciones del arreglo, entonces al finalizar de recorrerlo todo, en la variable 'mayor' va a quedar guardado el mayor valor de todo el arreglo.
+Algoritmo sin_titulo
+	definir i, tamanio, vector, posicion, caracter_, buscar como entero
+	posicion = 0
+	escribir "ingrese tamaño del vector"
+	leer tamanio 
+	dimension vector(tamanio)
+		
+	escribir "ingrese numeros al vector"
+	
+	para i=0 hasta tamanio-1 Con Paso 1 Hacer
+		
+		leer vector(i)
+		
+	FinPara
+	
+	comparacion(vector,tamanio)
+finAlgoritmo
+
+funcion comparacion(vector,tamanio)
+	
+	definir max,i  como entero
+	max=0
+		//	escribir "ingrese valor a buscar"
+	//	leer buscar 
+	
+	para i=0 hasta tamanio-1 Con Paso 1 Hacer
+		si vector(i) > 0 y max < vector(i) Entonces
+			
+			max= vector(i)
+			
+			
+		FinSi
+		
+	FinPara
+	
+	escribir "el valor maximo es  " max  
+finFuncion

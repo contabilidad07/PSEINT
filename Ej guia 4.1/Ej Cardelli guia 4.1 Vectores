@@ -1,0 +1,26 @@
+//Pedir 5 enteros por teclado e imprimirlos por pantalla en el orden invertido de ingreso
+/// dimension nombre_variable (tamaño)
+///definir nombre_variable tipo
+
+algoritmo Ej_Vector_Cardelli
+	
+	dimension valores(5)  // vector de tamaño 5
+	definir i, valores como entero
+	escribir " ingrese 5 valores enteros"
+	para i=0 hasta 4 Hacer // son 5 valores y empieza a contar desde cero, porque ya lo declare en linea 7, con tamaño de 5 . Parte desde indice 0 hasta 4
+		leer valores(i)  			/// para acceder a todos los elementos del vector, se llama recorrer el vector
+		/// con el bucle para comienzo a recorrer el vector y leerlo, valores (sub i) se va cargando con los datos leer "de entrada por pantalla"
+		/// y se los va asignando a V(0), v(1,), ... V(n), al terminar el bucle,se asignan todos los elementos al subindice del vector 
+	FinPara 
+	
+	escribir " Los valores ingresados en forma invertida son: "
+	para i=4 hasta 0 con paso -1 hacer /// empezamos desde el ultimo subindice hasta el subindice cero usando la funcion de paso negativa -1
+		si i=0 entonces
+			escribir valores(i)
+		sino 
+			escribir valores(i), ", " sin saltar  /// para que los valores se escriban uno al lado del otro, 
+			///sin saltar hace que en la pantalla no se avance a la proxima linea
+		FinSi
+		
+	FinPara
+FinAlgoritmo

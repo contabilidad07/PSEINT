@@ -1,0 +1,18 @@
+//Realizar una función que valide si un numero es impar o no. Si es impar la función debe devolver un verdadero, si no es impar debe devolver falso. Nota: la función no debe
+//tener mensajes que digan si es par o no, eso debe pasar en el Algoritmo.
+Algoritmo ej2_guia3b2
+	Definir num Como Entero
+	escribir " ingrese un numero"
+	leer num
+	escribir " el numero " num " es: " paroimpar(num)// llamo con una nueva funcion o con escribir la variable
+FinAlgoritmo
+funcion pa_imp = paroimpar (num)
+	definir pa_imp como logico
+	si num mod 2 = 0 Entonces // si es par es falso
+		
+		pa_imp=Falso
+	sino 
+		pa_imp=verdadero // si es impar es verdadero
+	FinSi	
+FinFuncion
+	

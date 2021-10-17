@@ -1,0 +1,34 @@
+// ejercicio 2 guia 4.1
+Algoritmo Leer_10_num_reales
+	
+	//	Realizar un programa que lea 10 números reales por teclado, los almacene en un arreglo
+	//	y muestre por pantalla la suma, resta y multiplicación de todos los números ingresados
+	//	al arreglo.
+	Definir i, contador Como entero
+	Definir vector, suma, resta, multiplicacion Como real
+	Dimension vector(10)
+	Escribir "Ingrese 10 números reales"
+	suma=0
+	resta=0	
+	contador= 0
+	multiplicacion=1
+	Para i = 0 hasta 9 Hacer
+		Leer vector(i)
+		contador= contador +1
+		escribir "usted ingreso: " contador " numeros"
+		suma= suma+vector(i)
+		resta= resta-vector(i)
+		multiplicacion= multiplicacion*vector(i)
+	FinPara
+	escribir " los numeros ingresados son: "
+	Para i = 0 hasta 9 Hacer
+		Escribir "[" vector(i) "]" sin saltar
+	FinPara
+	Escribir " "
+	Escribir "La suma es: " suma 
+	Escribir "La resta: " resta 
+	Escribir "La multiplicacion: " multiplicacion
+
+	
+	
+FinAlgoritmo

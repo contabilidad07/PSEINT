@@ -1,0 +1,22 @@
+Algoritmo extr3
+	Definir n Como Entero
+	Escribir "Ingrese altura de la fila"
+	Leer n
+	muestra(n)
+FinAlgoritmo
+
+SubProceso muestra(n)
+	Definir i,m,j Como Entero
+	m=1	
+	Para i<-1 Hasta n Con Paso 1 Hacer
+		Escribir Sin Saltar,m
+		Para j<-2 Hasta n Con Paso 1 Hacer
+			Si i>=j Entonces
+				m=m+1
+				Escribir Sin Saltar,m
+			FinSi
+		Fin Para
+		m=1
+		Escribir ""
+	Fin Para
+fin subproceso

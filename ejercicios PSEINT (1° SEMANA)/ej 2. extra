@@ -1,0 +1,13 @@
+Algoritmo ej_2_extra
+	//ingresar base y altura de un rectangulo y calcular el area y perimetro//
+	definir base, altura,area,perimetro Como Real
+	escribir "ingrese la base del rectángulo "
+	leer base
+	escribir "ingrese la altura del rectángulo"
+	leer altura
+	area= base*altura
+	perimetro= 2*altura+ 2*base
+	escribir " El área del rectángulo es " area
+	escribir " El perimetro del rectángulo es " perimetro
+
+FinAlgoritmo

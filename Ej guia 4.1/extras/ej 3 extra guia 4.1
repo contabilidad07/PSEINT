@@ -1,0 +1,30 @@
+//Crear dos vectores que tengan el mismo tamaño (el tamaño se pedirá por teclado) y almacenar en uno de ellos nombres de personas como cadenas. 
+//En el segundo vector se debe almacenar la longitud de cada uno de los nombres (para ello puedes usar la función Longitud() de PseInt).
+// Mostrar por pantalla cada uno de los nombres junto con su 	longitud.
+
+Algoritmo Extra_3
+    Definir  i,  tamanio,k como entero
+
+	    Escribir "Ingrese el tamaño de los vectores"
+    leer tamanio
+	rellena(tamanio)
+fin algoritmo
+subproceso rellena(tamanio)
+	definir i, vectorB como entero
+	definir vectorA como cadena
+	Dimension  vectorA(tamanio) // nombre de la  persona
+	Dimension vectorB(tamanio) // longitud del nombre
+	
+	Escribir "Ingrese  nombres"
+    para i=0 hasta tamanio-1 Hacer
+        
+        leer vectorA[i]  // vector de cadena
+        vectorB(i)=Longitud(vectorA[i]) // que se guarde la longitud de mi vectorA en vectorB
+    FinPara
+
+    para i=0 Hasta  tamanio-1 Hacer
+        Escribir " [" vectorA[i], " ]" sin saltar
+		escribir "(" vectorB(i), " ) "
+    FinPara
+	
+fin subproceso

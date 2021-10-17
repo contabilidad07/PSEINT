@@ -1,0 +1,50 @@
+// ejercicio 2 extra guia 4.2
+///Crear una matriz de orden n * m (donde n y m son valores ingresados por el usuario),llenarla con números aleatorios entre 1 y 100 y mostrar su traspuesta.
+///NOTA: si no 	conoces lo que es una traspuesta, mirar el siguiente link: Matriz Traspuesta
+Algoritmo extra2
+	Definir matriz,traspuesta,i,j,n,m Como Entero
+	Escribir "ingrese numero para las filas"
+	leer n
+	Escribir "ingrese numero para las columnas"
+	leer m
+	
+	Dimension matriz(n,m)
+	Dimension traspuesta(m,n)
+	relleno(matriz,n,m)
+	muestra(matriz,n,m)
+	Escribir "su matriz traspuesta quedaria asi: "
+	para i = 0 hasta n-1 hacer
+		para j = 0 hasta m-1 Hacer
+			traspuesta(j,i) = matriz(i,j)
+		FinPara
+	FinPara
+	
+	para i = 0 hasta m-1 Hacer
+		para j = 0 hasta n-1 Hacer
+			Escribir Sin Saltar "(" ,traspuesta(i,j) ")"
+		FinPara
+		Escribir ""
+	FinPara
+	
+fin algoritmo
+subproceso relleno(matriz,n,m)
+	definir i,j como entero
+		para i = 0 hasta n-1 Hacer
+		para j = 0 hasta m-1 Hacer
+			matriz(i,j) = aleatorio (1,100)
+			escribir " valor para fila y columna [" i, j "] = " matriz(i,j)
+		FinPara
+	FinPara
+fin subproceso
+subproceso muestra(matriz,n,m)
+	definir i,j como entero
+		para i = 0 hasta n-1 Hacer
+			para j = 0 hasta m-1 Hacer
+				escribir " [", matriz(i,j), " ]" sin saltar
+			FinPara
+			escribir ""
+		FinPara
+	
+fin subproceso
+	
+	

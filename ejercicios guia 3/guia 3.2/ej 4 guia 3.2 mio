@@ -1,0 +1,29 @@
+
+//	4. Realizar un programa que pida al usuario una frase y una letra a buscar en esa frase. La función debe devolver la cantidad de veces que encontró la letra. 
+//Nota: recordar el uso de la función Subcadena().
+
+Algoritmo ej4_guia32
+	Definir frase, letra Como Caracter
+	
+		Escribir "Ingrese frase"
+	Leer frase
+	Escribir "Ingrese letra"
+	leer letra
+	
+	Escribir "La letra : " letra  " :aparece , "  contarletras(frase, letra), ", veces" 
+	
+FinAlgoritmo
+
+Funcion  conta=contarletras(frase,letra)
+	Definir i como entero
+	definir conta como entero
+	conta=0
+	Para i=0 Hasta Longitud(frase)-1 Con Paso 1 Hacer
+		Si Subcadena(frase,i,i)=letra
+			
+			conta = conta + 1
+			
+		FinSi
+		
+	Fin Para
+fin funcion

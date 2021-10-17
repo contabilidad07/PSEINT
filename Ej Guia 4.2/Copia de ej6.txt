@@ -1,0 +1,100 @@
+Algoritmo ej6
+	Definir tam,v,i,j,A,c Como Entero
+	Repetir
+		Escribir "Ingrese el tamaño de la Matriz (MAX 10)"
+		Leer tam
+	Mientras Que tam>10 o tam<=0
+	Dimension v[tam,tam],A[tam,tam]
+	
+	cargarmartriz(v,tam)
+	mostramatriz(v,tam)
+	sumafila(v,tam,A)
+	sumacolumna(v,tam,A)
+	sumadiagonal(v,tam,A)
+	
+	
+FinAlgoritmo
+
+SubProceso cargarmartriz(v,tam)
+	Definir i,j Como Entero
+	Escribir "Cargue valores para la Matriz:"
+	Para i<-0 Hasta tam-1 Con Paso 1 Hacer
+		Para j<-0 Hasta tam-1 Con Paso 1 Hacer
+			Repetir
+				Escribir Sin Saltar"[",i,"]","[",j,"]"// vuelvo a escribir el mismo lugar de v (i,j)mientras no cumpla la condicion ], 
+				Leer v[i,j]
+			Mientras Que v[i,j]>=10 o v[i,j]<=0
+		Fin Para
+	Fin Para
+FinSubProceso
+
+SubProceso mostramatriz(v,tam)
+	Escribir "La matriz cargada es:"
+	Definir i,j Como Entero
+	Para i<-0 Hasta tam-1 Con Paso 1 Hacer
+		Para j<-0 Hasta tam-1 Con Paso 1 Hacer
+			Escribir Sin Saltar v[i,j]," "
+		Fin Para
+		Escribir ""
+	Fin Para
+FinSubProceso
+
+
+SubProceso sumafila(v,tam,A)
+	Escribir "La suma de cada fila es la siguiente:"
+	Definir i,j,s Como Entero
+	Para i<-0 Hasta tam-1 Con Paso 1 Hacer
+		s=0
+		Para j<-0 Hasta tam-1 Con Paso 1 Hacer
+			s=s+v[i,j]
+		Fin Para
+		A[0,i]=s
+	Fin Para
+	Para i<-0 Hasta tam-1 Con Paso 1 Hacer
+		Escribir"[",A[0,i],"]"
+	Fin Para
+FinSubProceso
+
+SubProceso sumacolumna(v,tam,A)
+	Escribir "La suma de cada columna es la siguiente:"
+	Definir i,j,s Como Entero
+	Para j<-0 Hasta tam-1 Con Paso 1 Hacer
+		s=0
+		Para i<-0 Hasta tam-1 Con Paso 1 Hacer
+			s=s+v[i,j]
+		Fin Para
+		A[1,j]=s
+	Fin Para
+	Para i<-0 Hasta tam-1 Con Paso 1 Hacer
+		Escribir Sin Saltar"[",A[1,i],"]"
+	Fin Para
+	Escribir ""
+FinSubProceso
+
+SubProceso sumadiagonal(v,tam,A)
+	Definir i,j,s,c Como Entero
+	s=0
+	Para i<-0 Hasta tam-1 Con Paso 1 Hacer
+		s=s+v[i,i]
+	Fin Para
+	Escribir"Suma de Diagonal Principal: [",s,"]"
+	c=magic(s,A,tam)
+	Si c=((2*tam)) Entonces
+		Escribir "<<<<< Es una Matriz magica >>>>>"
+	SiNo
+		Escribir "<<<<< No es una Matriz magica >>>>>"
+	FinSi
+FinSubProceso
+Funcion comparar=magic(s,A,tam)
+	Definir comparar,i,j Como Entero
+	comparar=0
+	Escribir s
+	Para i<-0 Hasta 1 Con Paso 1 Hacer
+		Para j<-0 Hasta tam-1 Con Paso 1 Hacer
+			Si s=A[i,j] Entonces
+				comparar=comparar+1
+			FinSi
+		Fin Para
+	Fin Para
+FinFuncion
+	

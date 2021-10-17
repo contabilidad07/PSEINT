@@ -1,0 +1,40 @@
+//Realizar un programa que calcule la multiplicación de dos matrices de enteros de 3x3. Inicialice las matrices para evitar el ingreso de datos por teclado.
+Algoritmo extra4
+	Definir matriz Como Entero
+	
+	Dimension matriz(3,3)
+	llena(matriz)
+	muestra(matriz)
+	multi(matriz)
+	
+FinAlgoritmo
+SubProceso llena(matriz)
+	Definir i,j Como Entero
+	para i = 0 hasta 2 Hacer
+		para j = 0 hasta 2 hacer
+			matriz(i,j)=Aleatorio(1,10)
+			
+		FinPara
+	FinPara
+FinSubProceso
+SubProceso muestra(matriz)
+	Definir i,j Como Entero
+	para i = 0 hasta 2 Hacer
+		para j = 0 hasta 2 Hacer
+			Escribir Sin Saltar " [" , matriz[i,j] , "]" 
+			
+		FinPara
+		escribir""
+	FinPara
+FinSubProceso
+SubAlgoritmo multi(matriz)
+	Definir i,j,multip Como Entero
+	multip=1
+	para i = 0 hasta 2 Hacer
+		para j = 0 hasta 2 Hacer
+			multip=multip * matriz(i,j)
+			Escribir "la multiplicacion de los elementos es:" , multip
+		FinPara
+	FinPara
+	
+FinSubAlgoritmo

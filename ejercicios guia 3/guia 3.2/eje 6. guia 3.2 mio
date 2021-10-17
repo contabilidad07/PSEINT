@@ -1,0 +1,25 @@
+
+
+//Escribir una función recursiva que devuelva la suma de los primeros N enteros. 
+
+Algoritmo ejercicio6
+	
+	Definir num Como Entero
+	escribir "ingrese un numero"
+	leer num
+	
+	Escribir " La suma de los primero número enteros es de: ", SumarEnteros( num)
+	
+FinAlgoritmo
+
+Funcion suma = SumarEnteros( num )
+	
+	Definir suma Como Entero
+	
+	Si num <> 0 Entonces //mientras sea distinto de cero num, hace el condicional si, hasta llegar a cero(va bajando un numero
+		suma = num + SumarEnteros ( num - 1 ) // cuando llega a cero no hace el condicional, no baja mas, empieza a sumar num+num anterior
+	
+	FinSi       ///cuando llego a cero el bucle se queda aca y empieza a sumar
+	/// num 1 y sum =1, num2 y sum=3, num 3 y sum=6, num 4 y sum =10 (va sumando el nuevo numero con la suma anterior)
+	/// es decir suma= suma +num
+FinFuncion

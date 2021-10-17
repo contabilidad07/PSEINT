@@ -1,0 +1,45 @@
+// ejercicio 3
+//Dada una matriz de orden n * m (donde n y m son valores ingresados por el usuario) realizar un subprograma que llene la matriz de numeros aleatorios. Despues, crearemos
+//otro subprograma que calcule y muestre la suma de los elementos de la matriz. Mostrar la matriz y los resultados por pantalla.
+Algoritmo sin_titulo
+	definir matr, n, m como entero
+	Escribir "Ingrese el tamaño de la fila"
+	Leer n
+	Escribir "Ingrese el tamaño de la columna"
+	Leer m
+	dimension matr(n,m)
+		relleno(matr,n,m)
+		muestra(matr,n,m)
+		sum(matr,n,m)
+	
+FinAlgoritmo
+subproceso  relleno(matr,n,m,)
+	definir i,j como entero
+	para i=0 hasta n-1
+		para j=0 hasta m-1
+			matr(i,j) = aleatorio (1,10)
+			escribir " valor para fila y columna [" i, j "] = " matr(i,j)
+			
+		FinPara
+	FinPara
+FinSubProceso
+	subproceso  muestra(matr,n,m)
+		escribir " las matrices generadas son: "
+		definir i,j como entero
+		para i=0 hasta n-1
+			para j=0 hasta n-1
+				escribir " [", matr(i,j), " ]" sin saltar
+			FinPara
+			escribir ""
+		FinPara
+FinSubProceso
+subproceso sum(matr,n,m)
+	definir i,j,num,suma como entero
+	suma=0
+	para i=0 hasta  n-1
+		para j=0 hasta  m-1
+			suma= suma+matr(i,j)
+		fin para
+	FinPara
+	escribir " la matriz suma es : [ ", suma " ]"
+fin subproceso

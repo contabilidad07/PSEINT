@@ -1,0 +1,45 @@
+/// ejercicio 3 guia 4.1
+///Realizar un programa que rellene un vector de tamaño N, con valores ingresados por el usuario. A continuación, se debe buscar un elemento dentro del arreglo 
+//(el número a buscar también debe ser ingresado por el usuario). El programa debe indicar la posición donde se encuentra el valor. 
+//En caso que el número se encuentre repetido dentro del arreglo se deben imprimir todas las posiciones donde se encuentra ese valor.
+//Finalmente, en caso que el número a buscar no está adentro del arreglo se debe mostrar un mensaje.
+///1° vamos a dimensionar un vector con el tamaño que elijas por teclado
+///2° vamos a rellenarlo con valores ingresados por teclado
+///3° vamos a pedir por teclado el numero que queremos buscar dentro del arreglo.
+//4° vamos a realizar una busqueda, es decir, vamos a escribir una condicion donde digamos que Si el numero que ingresó el usuario se encuentra dentro del vector.... Vamos a imprimir su posicion.
+	//Para esto, deberias pensar en escribir la posicion del vector(i) dentro de ese condicional, para que lo escriba todas las veces que esa condicion se cumpla!
+Algoritmo identificar_espacio
+		
+		definir i, tamanio, vector, posicion, contador, buscar como entero
+		
+		posicion = 0 // encuentra la posicion
+		contador=0		
+		escribir "ingrese tamaño del vector"
+		leer tamanio      ///dimensionamos el tamaño del vector
+		
+		dimension vector(tamanio)
+		
+		escribir "a continuación rellene el vector acorde al tamaño establecido"  //rellenamos el vector
+		para i = 0 hasta tamanio - 1 Hacer // recorre n veces cargando los datos
+			leer vector(i)
+		FinPara
+		
+		escribir "ingrese valor a buscar"  // pedimos numero a buscar
+		leer buscar 
+		
+		para i=0 hasta tamanio - 1  // buscamos dentro del vector
+			si buscar = vector(i) 
+				posicion=i// suma una a la posicion porque i comienza en cero
+				contador = contador +1
+				escribir "el valor " buscar " se encuentra en la posición " posicion 
+				
+			FinSi
+		FinPara
+		
+		si contador = 0 entonces
+			escribir "el valor buscado no se ha ingresado"
+		FinSi
+		
+		
+
+FinAlgoritmo

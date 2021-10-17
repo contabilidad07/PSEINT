@@ -1,0 +1,195 @@
+proyectos psint programacion 
+
+Algoritmo proyecto1
+	//Escribir un algoritmo en el cual se consulte al usuario que ingrese ¿cómo está el día de
+	//hoy? (soleado, nublado, lloviendo). A continuación, mostrar por pantalla un mensaje que
+	//indique "El día de hoy está ?", completando el mensaje con el dato que ingresó el
+	//usuario
+	
+	Escribir "¿cómo está el día de hoy? (soleado, nublado, lloviendo)";
+	definir clima Como Caracter;
+	leer clima;
+	
+	Limpiar Pantalla
+	
+	Escribir "El dia de hoy esta ", clima;
+FinAlgoritmo
+
+
+Algoritmo proyecto1
+	//Conocido el número en matemática PI ?, pedir al usuario que ingrese el valor del radio
+	//de una circunferencia y calcular y mostrar por pantalla el área y perímetro. Recuerde que
+	//para calcular el área y el perímetro se utilizan las siguientes fórmulas: 
+	
+	definir area, perimetro, radio Como Real;
+	
+	Escribir "Ingrese el valor del radio de la circuferencia";
+	Leer radio;
+	
+	area = pi * radio^2;
+	perimetro = pi * radio * 2;
+	
+	Escribir "El area es: ",area;
+	Escribir "El perimetro es: ",perimetro;
+FinAlgoritmo
+
+Algoritmo proyecto1
+	//Escribir un programa que calcule el precio promedio de un producto. El precio promedio
+	//se debe calcular a partir del precio del mismo producto en tres establecimientos
+	//distintos.
+	
+	definir precio1, precio2, precio3, promedio Como Real;
+	Escribir "Ingrese el precio en el mercado 1";
+	Leer precio1;
+	
+	Escribir "Ingrese el precio en el mercado 2";
+	Leer precio2;
+	
+	Escribir "Ingrese el precio en el mercado 3";
+	Leer precio3;
+	
+	promedio = (precio1 + precio2 + precio3)/3;
+	
+	Escribir "El precio promedio es $", promedio;
+	
+FinAlgoritmo
+
+Algoritmo proyecto1
+	//A partir de una conocida cantidad de metros que el usuario ingresa a través del teclado
+	//se debe obtener su equivalente en centímetros, en milímetros y en pulgadas.
+	//Ayuda: 1 pulgada equivale a 2.54 centímetros.
+
+	
+	definir metros, centimetros, milimetros, pulgadas Como Real;
+	Escribir "Ingrese la cantidad de metros:";
+	Leer metros;
+	
+	centimetros = metros * 100;
+	milimetros = metros * 1000;
+	pulgadas = centimetros * 2.54;
+	
+	Escribir "Centimetros: ", centimetros,"cm.";
+	Escribir "milimetros: ", milimetros,"mm.";
+	Escribir "Pulgadas: ", pulgadas,"pg.";
+	
+FinAlgoritmo
+
+Algoritmo proyecto1
+	//Escribir un programa que calcule cuántos litros de combustible consumió un automóvil.
+	//El usuario ingresase una cantidad de litros de combustible cargados en la estación y
+	//una cantidad de kilómetros recorridos, después, el programa calculará el consumo
+	//(km/lt) y se lo mostrará al usuario.
+
+	
+	definir litros, litrosest, km, resultado Como Real;
+	Escribir "Ingrese la cantidad de litros cargados:";
+	Leer litros;
+	
+	Escribir "Ingrese la cantidad de km recorridos:";
+	Leer km;
+	
+	resultado = km / litros;
+	
+	Escribir "El consumo es: ", resultado,"km/lt.";
+	
+	
+FinAlgoritmo
+
+Algoritmo PROYECTO1
+	
+	//Escriba un programa que permita al usuario ingresar el valor de dos variables numéricas
+	//de tipo entero. Posteriormente, el programa debe intercambiar los valores de ambas
+	//variables y mostrar el resultado final por pantalla.
+	
+	Definir num1, num2, aux Como Entero
+	Escribir "Ingrese el valor del primer variable";
+	Leer num1;
+	Escribir "Ingrese el valor de la 2 variable";
+	Leer num2;
+	
+	Escribir "Mostrando la variables actualmente num1: ",num1, " num2: ",num2;
+	
+	aux = num1;
+	num1 = num2;
+	num2 = aux;
+	
+	Escribir "Mostrando la variables invertidas num1: ",num1, " num2: ",num2;
+	
+FinAlgoritmo
+
+Algoritmo PROYECTO1
+	
+	//Escriba un programa que lea dos números enteros y realice el cálculo de la suma, resta,
+	//multiplicación y división entre ambos valores. Los resultados deben mostrarse por
+	//pantalla.
+	
+	definir num1, num2 Como Real;
+	escribir "ingrese el primer valor"
+	Leer num1;
+	escribir "ingrese el segundo valor"
+	Leer num2;
+	
+	Escribir "El resultado de sumar ",num1, " con ",num2, " da ",(num1 + num2);
+	Escribir "El resultado de restar ",num1, " con ",num2, " da ",(num1 - num2);
+	Escribir "El resultado de multiplicar ",num1, " con ",num2, " da ",(num1 * num2);
+	Escribir "El resultado de dividir ",num1, " con ",num2, " da ",(num1 / num2);
+FinAlgoritmo
+
+Algoritmo PROYECTO1
+	
+	//Un colegio desea saber qué porcentaje de niños y qué porcentaje de niñas hay en el
+	//curso actual. Diseñar un algoritmo para este propósito. Recuerda que para calcular el
+	//porcentaje puedes hacer una regla de 3 simple. El programa debe solicitar al usuario que
+	//ingrese la cantidad total de niños, y la cantidad total de niñas que hay en el curso.
+	
+	Definir ninos, ninas, porcentaje1, porcentaje2, totalalumnos Como Real
+	Escribir "Ingrese la cant de niños en el curso";
+	Leer ninos;
+	Escribir "Ingrese la cant de niñas en el curso";
+	Leer ninas;
+	
+	totalalumnos = (ninos + ninas);
+	porcentaje1 = ninos * (100/totalalumnos);
+	porcentaje2 = ninas * (100/totalalumnos);
+	
+	Escribir "El porcentaje de niños es de: ", porcentaje1;
+	Escribir "El porcentaje de niñas es de: ", porcentaje2;
+	
+FinAlgoritmo
+
+Algoritmo PROYECTO1
+	
+	//A partir de una conocida cantidad de días que el usuario ingresa a través del teclado,
+	//escriba un programa para convertir los días en horas, en minutos y en segundos. Por
+	//ejemplo
+	
+	definir dias, horas, minutos, segund Como Real;
+	Escribir "Ingrese la cant de dias"
+	Leer dias;
+	
+	horas = dias * 24;
+	minutos = dias * 1440;
+	segund = dias * 86400;
+	
+	Escribir "Horas: ", horas, "; minutos: ", minutos, "; segundos: ",segund;
+	
+FinAlgoritmo
+
+Algoritmo PROYECTO1
+	
+	//Crear un programa que solicite al usuario que ingrese el precio de un producto al inicio
+	//del año, y el precio del mismo producto al finalizar el año. El programa debe calcular cuál
+	//fue el porcentaje de aumento que tuvo ese producto en el año y mostrarlo por pantalla.
+	
+	definir precio1, precio2, porcentaje Como Real;
+	Escribir "Ingrese el precio a principio de año"
+	Leer precio1;
+	
+	Escribir "Ingrese el precio a fin de año"
+	Leer precio2;
+	
+	porcentaje = (precio2 * (100 / precio1))-100;
+	
+	Escribir "El porcentaje a fin de año es de: ",porcentaje,"%";
+	
+FinAlgoritmo

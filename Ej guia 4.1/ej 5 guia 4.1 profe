@@ -1,0 +1,165 @@
+//5.Realizar un programa con el siguiente menú y le pregunte al usuario que quiere hacer Hasta que ingrese la opción Salir:
+//a. Llenar Vector A. Este vector es de tamaño N y se debe llenar de manera aleatoria usando la función Aleatorio(valorMin, valorMax) de PseInt.
+//b. Llenar Vector B. Este vector también es de tamaño N y se llena de manera aleatoria.
+//c. Llenar Vector C con la suma de los vectores A y B. La suma se debe realizar elemento a elemento. Ejemplo: C = A + B
+//d. Llenar Vector C con la resta de los vectores B y A. La resta se debe realizar lemento a elemento. Ejemplo: C = B - A
+//e. Mostrar. Esta opción debe permitir al usuario decidir qué vector quiere mostrar: Vector A, B, o C.
+//f. Salir.
+//NOTA: El rango de los números aleatorios para los Vectores será de [-100 a 100]. La longitud para todos los vectores debe ser la misma, por lo tanto, esa información sólo se
+//solicitará una vez.
+Algoritmo sin_titulo
+	definir a,b,c como real
+	definir tamano como entero
+	
+	Escribir "Ingrese el Tamaño de los Vectores"
+	leer tamano
+	dimension a(tamano) // tamaño del vector, los tres vectores tienen el mismo tamaño
+	dimension b(tamano)
+	dimension c(tamano)
+	
+	mostrarmenu()     //llamo a un subprograma, mostrarmenu, no recibe nada por parametro, por eso tiene el parentesis vacio
+	activarmenu(a,b,c,tamano)  //llama al subprograma (los argumentos a,b,c, tamanio) pasan directamente a los subprocesos y funciones
+fin algoritmo
+subproceso mostrarmenu() // esta vacio
+	escribir " ------------ OPCIONES -------------- "
+	Escribir "a) Llenar el vector A"
+	Escribir "b) Llenar el Vector B"
+	escribir "c) Mostrar C= la suma de A Y B"
+	escribir "d) Mostrar C= la resta de B y A"
+	Escribir "e) Seleccione A, B, o C para mostrar cualquiera de ellos"
+	escribir "f) Salir"
+	escribir " Seleccione una de las anteriores"
+	
+fin subproceso
+subproceso activarmenu(vectorA,vectorB,vectorC, tamanio) //  los tres vectores y el tamaño
+	definir sel Como Caracter // la opcion que seleccioné (desde la opcion a a la f)
+	definir vectorAlleno,vectorBlleno,vectorClleno como logico // verdadero o falso, defino 3 valores logicos,no puedo trabajar c si no llene A y B 
+	vectorAlleno= falso // sirven para ver si se han llenado los vectores antes de trabajar con ellos
+	vectorBlleno=falso  // los estoy inicializando en falso, porque si quedan vacios, deben ser falsos
+	vectorClleno =falso
+	leer sel  // porque el ultimo mensaje que aparece es linea 31 "seleccione una de las anteriores, ahora las leo
+	escribir " ha seleccionado la opcion " sel
+	sel=minusculas (sel)
+	mientras sel<> "f"  // que se repita mientras no elija la opcion "f" de salir
+		si sel="a" entonces 
+			vectorAlleno=verdadero  // si usuario selecciona a se va a llenar el vector a
+		FinSi
+		si sel="b" entonces 
+			vectorBlleno=verdadero // si usuario selecciona b se va a llenar el vector b
+		fin si
+		si sel="c" o sel= "d" entonces  // si usuario selecciona c o d se van a hacer operaciones para llenar el vectorc
+			vectorClleno=verdadero
+		fin si
+			
+		segun sel hacer					//invoco al subproceso llenarvector toma datos aleatorios
+			"a":									// uso la funcion llenar vector que toma por referencia los valore de vectorA y tamanio
+				llenarvector(vectorA,tamanio)  // los vectores por defecto se pasan por referencia el (vectorA) se trata igual a una variable, tiene cosas adentro y para poder verlas usamos bucle para
+
+				escribir " Vector A lleno con " tamanio "numeros aleatorios"
+				escribir ""
+				
+			"b":								//invoco al subproceso llenarvector toma datos aleatorios
+				llenarvector(vectorB,tamanio) // para llenar el vector uso la misma funcion llenarvector y pasa los datos de vectorA o vectorB, tamanio toma los datos de tamano del algoritmo ppal
+				escribir " Vector B lleno con " tamanio "numeros aleatorios"
+				escribir ""
+				
+			"c":
+				si 	vectorAlleno y vectorBlleno entonces // si vectorA y vectorB estan llenos llama al subproceso sumarAB donde los suma
+					sumarAB(vectorC,vectorA,vectorB,tamanio)   
+					escribir " se sumaron los valores del vector A y el vector B"
+					escribir ""
+				SiNo
+					escribir " debe llenar los valores A y B para poder hacer operaciones con sus elementos"
+					escribir ""
+					Escribir  "="
+				FinSi
+			"d": 
+				si 	vectorAlleno y vectorBlleno entonces
+					restarBA(vectorC,vectorA,vectorB,tamanio)
+					escribir " se Restaron los valores del vector A y el vector B"
+					escribir ""
+				SiNo
+					escribir " debe llenar los valores A y B para poder hacer operaciones con sus elementos"
+					escribir ""
+				FinSi
+				
+			"e": si 	vectorAlleno y vectorBlleno y vectorClleno entonces // Si los tres vectores estan llenos lleno la fc mostrar uno y voy al subproceso
+					mostraruno(vectorA,vectorB,vectorC,tamanio)
+					escribir " se Restaron los valores del vector A y el vector B"
+					escribir ""
+				SiNo
+					escribir " Los vectores deben estar inicializados para motrarlos"  /// si algun vector no esta lleno pide volver a ingresar opcion
+				FinSi
+				
+			de otro modo: 
+				si sel<> "f"
+					escribir "ingrese una opcion valida" // sino ingrese las opciones de a haste e, ni tampoco f dice que selecciones otra opcion valida
+				FinSi
+				
+		FinSegun
+		escribir "ingrese otra opcion "
+		leer sel
+		escribir "ha seleccionado la opcion" sel
+		sel=minusculas(sel)
+	fin mientras
+finsubproceso
+
+SubProceso llenarVector(vector,tamanio) // recibe un vector y su tamaño para llenarlo con numeros aleatorios entre -100 y 100
+	definir i Como Entero  // lo llama cuando selecciono a o b
+	para i = 0 Hasta tamanio-1
+	vector(i)=aleatorio (-100,100)
+	FinPara
+FinSubProceso
+// recibe 3 vectores y sus tamaños, suma dos de ellos y guarda los resultados en un tercero
+subproceso sumarAB(vectorC,vectorA,vectorB,tamanio)// suma la vector a +vector b
+	definir i como entero
+		para i = 0 Hasta tamanio-1 hacer
+		vectorC(i)=vectorA(i)+vectorB(i)
+	FinPara
+FinSubProceso
+// recibe 3 vectores y sus tamaños, resta dos de ellos y guarda los resultados en un tercero
+subproceso restarBA(vectorC,vectorA,vectorB,tamanio) 
+	definir i como entero
+	para i = 0 Hasta tamanio-1 hacer
+		vectorC(i)=vectorB(i)-vectorA(i)
+	FinPara
+FinSubProceso 
+subproceso 	mostraruno(vectorA,vectorB,vectorC,tamanio)
+	definir i como entero
+	definir vector_elegido como caracter
+	hacer 
+		escribir "¿Qué vector desea mostrar? (A,B,C)"
+		leer vector_elegido
+		vector_elegido=mayusculas(vector_elegido)
+		si  vector_elegido<>"A" y vector_elegido<>"B" y vector_elegido<>"C" entonces
+			escribir "elija una opcion valida"
+		FinSi
+				
+	Mientras Que  vector_elegido<>"A" y vector_elegido<>"B" y vector_elegido<>"C"
+	escribir ""
+	escribir "vector" vector_elegido ": "
+	segun vector_elegido hacer
+		"A":
+			mostrarvector(vectorA,tamanio)
+		"B": 
+			mostrarvector(vectorB,tamanio)
+		"C": 
+			mostrarvector(vectorC,tamanio)
+
+	FinSegun
+	
+FinSubProceso
+subproceso mostrarvector(vector,tamanio)
+	definir i como entero
+	para i = 0 Hasta tamanio-1 hacer
+		si i=0 entonces
+			escribir sin saltar " {", vector(i), ", "
+		sino
+			si i>0  y i<tamanio-1 entonces
+				escribir sin saltar vector(i), ", "
+			sino 
+				escribir  vector(i), " }"
+			FinSi
+		finsi
+	finpara
+FinSubProceso

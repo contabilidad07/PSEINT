@@ -1,0 +1,46 @@
+Algoritmo sin_titulo
+	
+	//7.Crear un subproceso que rellene dos arreglos de tamaño n, con números aleatorios.
+	//Después, hacer una función que reciba los dos arreglos y diga si todos sus valores son
+	//iguales o no. La función debe devolver el resultado de está validación, para mostrar el
+	//mensaje en el algoritmo. Nota: recordar el uso de las variables de tipo lógico
+	
+	definir vector1, vector2 Como Real
+	Dimension vector1(5), vector2(5)
+	llenar(vector1, vector2)
+	
+	Si Validar(vector1, vector2) == Verdadero Entonces
+		Escribir "Los numeros en los 2 vectores son iguales"
+	SiNo
+		Escribir "Los numeros en los 2 vectores no son iguales"
+	Fin Si
+	
+FinAlgoritmo
+
+SubProceso llenar(vector1, vector2 Por referencia)
+	Definir i Como Entero
+	Para i = 0 Hasta 4 Con Paso 1 Hacer
+		vector1(i) = aleatorio(1, 25)
+		vector2(i) = aleatorio(1, 25)
+	Fin Para
+FinSubProceso
+
+Funcion conf <- Validar ( vector1, vector2 )
+	Definir conf Como Logico
+	Definir i, igual, noIgual Como Entero
+	igual = 0
+	noIgual = 0
+	Para i = 0 Hasta 4 Con Paso 1 Hacer
+		Si vector1(i) == vector2(i) Entonces
+			igual = igual +1
+		SiNo
+			noIgual = noIgual + 1
+		Fin Si
+	Fin Para
+	
+	Si igual == 5 Entonces
+		conf = Verdadero
+	SiNo
+		conf = Falso
+	Fin Si
+Fin Funcion

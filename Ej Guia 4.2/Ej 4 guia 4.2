@@ -1,0 +1,51 @@
+//4. Rellenar en un subproceso una matriz cuadrada con números aleatorios salvo en la diagonal principal, la cual debe rellenarse con ceros. Una vez llena la matriz debe
+//	generar otro subproceso para imprimir la matriz.
+///  matriz cuadrada es cuando tiene el mismo numero de filas que de columnas ejemplo matriz de 3x3,
+///  ejemplo:
+///   1      2     3         elementos de la matriz
+//  (0,0)  (0,1)  (0,2)      POSICIONES (i,j)
+///   4      5     6
+//  (1,0)  (1,1)  (1,2)
+///   7      8     9
+//  (2,0)  (2,1)  (2,2)
+/// como la diagonal siempre es i=j (posiciones) entonces esas posiciones hay que hacerlas escribir un 0 alli
+/// LA DIAGONAL PRINCIPAL ES LA QUE VA DEL EXTREMO SUPERIOR IZQUIERDO HASTA EL EXTREMO INFERIOR DERECHO., en este caso (0,0) (1,1) y (2,2)
+
+Algoritmo sin_titulo
+	definir n , m como entero  /// n y m son el numero de columnas y filas y me van a dar la dimension
+	definir matriz Como Entero
+	definir i,j como entero
+	escribir " ingrese numero de columnas y filas"
+	leer n
+	leer m
+	dimension matriz(n,m)
+	rellenar(matriz,n,m)
+	mostrar_matriz_original(matriz,n,m)
+		
+FinAlgoritmo
+
+SubProceso  rellenar(matriz,n,m)
+	definir i , j como entero
+	para i=0 hasta n-1 Hacer
+		para j=0 hasta m-1 Hacer
+			matriz(i,j) = azar(10)
+		FinPara
+	FinPara
+FinSubProceso
+
+
+SubProceso mostrar_matriz_original(matriz,n,m) //aca podes poner cualquier nombre , definis lo que sea dentro del subproceso haces todo y listo
+	definir i,j Como Entero
+	para i= 0 hasta n-1 Hacer
+		para j=0 hasta m-1 hacer
+			si i=j Entonces       /// esto lo hice porque justo la diagonal siempre es i=j por ej en una de 3x3 la diagonal es posiciones (0,0) (1,1) y (2,2)
+				matriz(i,j)=0
+				escribir "[0]" Sin Saltar
+			SiNo
+				escribir "[" matriz(i,j) "]" Sin Saltar
+			FinSi
+		FinPara
+		escribir ""
+	FinPara
+FinSubProceso
+

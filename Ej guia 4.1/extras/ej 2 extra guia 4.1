@@ -1,0 +1,42 @@
+//Realizar un programa que rellene un vector de tamaño N, con valores ingresados por el usuario y muestre por pantalla el promedio de la suma de todos los valores ingresados. 
+
+Algoritmo sin_titulo
+	definir tamanio Como Entero
+	hacer
+		escribir "Ingrese el tamaño del vector"
+		leer tamanio
+	Mientras Que tamanio<=0
+	cargarVector(tamanio)
+FinAlgoritmo
+
+SubProceso cargarVector(n) // n toma el valor tamanio para rellenar vector
+	definir i, vector como entero
+	Dimension vector[n]
+	para i = 0 hasta n-1
+		escribir  i+1,"° valor a ingresar :" sin saltar
+		leer vector[i]
+	FinPara
+	mostrarVector(vector, n)
+	escribir "Promedio del vector = ",promediar(vector, n)
+FinSubProceso
+
+SubProceso mostrarVector(a, n)
+	definir i como entero
+	Escribir "Vector"
+	para i = 0 hasta n-1
+		escribir a[i], " " Sin Saltar
+		si i=n-1 Entonces
+			Escribir ""
+		FinSi
+	FinPara
+FinSubProceso
+
+funcion prom <- promediar(a,b)
+	definir i,suma, prom Como Entero
+	suma = 0
+	para i = 0 hasta b-1
+		suma = suma +a[i]
+	FinPara
+	prom = suma/b
+FinFuncion
+	

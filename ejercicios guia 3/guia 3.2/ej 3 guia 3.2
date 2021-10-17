@@ -1,0 +1,22 @@
+//Crea una función EsMultiplo que reciba los dos números pasados por el usuario,validando que el primer numero múltiplo del segundo y devuelva verdadero si el
+//	primer numero es múltiplo del segundo, sino es múltiplo que devuelva falso.
+
+Algoritmo ejercicio3
+    Definir num1 , num2 Como Real;
+	Escribir "ingrese un numero";
+    leer num1;
+    Escribir "ingrese otro numero";
+    Leer num2;
+	escribir "el numero : " num1, " es : " Multiploo(num1,num2)
+
+FinAlgoritmo
+Funcion resultado=Multiploo(num1,num2)
+    Definir resultado como logico;
+    Si num1 MOD num2 = 0  Entonces
+        resultado=verdadero;
+	sino 
+		resultado=falso
+	fin si
+	
+	
+FinFuncion

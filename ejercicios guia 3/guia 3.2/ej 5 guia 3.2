@@ -1,0 +1,27 @@
+
+//Realizar una función que reciba un numero ingresado por el usuario y averigüe si el 	numero es primo o no.
+//Un número es primo cuando es divisible sólo por 1 y por sí mismo, por ejemplo: 2, 3, 5, 7, 11, 13, 17, etc. Nota: recordar el uso del MOD
+
+Algoritmo ej5
+	Definir num Como Entero
+	Escribir "Ingrese un numero"
+	Leer num
+	Si primo_ono(num)=2 Entonces /// invoca a la funcion desde el condicional
+		Escribir "Si es primo"
+	SiNo
+		Escribir "No es primo"
+	FinSi
+FinAlgoritmo
+
+Funcion resultado=primo_ono(num)
+	
+	Definir resultado,i Como Entero
+	resultado=0 // r es el contador
+	Para i<-1 Hasta num Con Paso 1 Hacer
+		Si num mod i=0 Entonces
+			
+			resultado=resultado+1
+		FinSi
+		
+	Fin Para
+FinFuncion

@@ -1,0 +1,113 @@
+	Algoritmo sin_titulo
+		//	2 7 6 9 5 1 4 3 8
+		Definir i, j, matriz, sumaFilas, sumaColumnas,sumaDiagonal, sumaDiagsecund, n, num, suma, contador Como Entero //sumaDiagsecund
+		definir filacolumna,sumadiagonales como logico
+		contador = 0
+		Hacer
+			Escribir "Ingrese orden matriz entre 1 y 9"
+			Leer n
+					Mientras Que n > 9 o n<1
+		Dimension matriz[n, n]
+		Dimension sumaFilas[n]
+		Dimension sumaColumnas[n]
+		sumaDiagonal = 0
+		sumaDiagsecund=0
+				Para i = 0 Hasta n - 1 Hacer
+			Para j = 0 Hasta n - 1 Hacer
+				Repetir
+					
+					Escribir Sin Saltar"[",i,"]","[",j,"]"///vuelvo a escribir el mismo lugar de v (i,j)mientras no cumpla la condicion ], 
+					Leer matriz[i,j]
+					si matriz[i,j]>=10 o matriz[i,j]<=0 Entonces // si  no cumple condicion vuelve al mismo lugar de j, no avanza el bucle
+						escribir "error, ingrese de nuevo numero"
+					FinSi
+				Mientras Que matriz[i,j]>=10 o matriz[i,j]<=0
+			
+				FinPara
+			FinPara
+			
+			///muestra matriz
+			escribir "La matriz es:"
+			Para i = 0 Hasta n - 1 Hacer 
+				Para j = 0 Hasta n - 1 Hacer
+					Escribir Sin Saltar matriz[i, j], " " 
+				FinPara
+				Escribir ""
+			FinPara
+			
+			///suma filas
+		Para i = 0 Hasta n - 1 Hacer
+			suma = 0 ///inicializa en cero cuando termina una fila
+			Para j = 0 Hasta n - 1 Hacer  /// sumar filas para todas las columnas
+				suma = suma + matriz[i, j]
+			FinPara/// cuando salta al i empieza a sumar de cero
+			sumaFilas[i] = suma /// almaceno aca la suma de las filas en la variable i solamente
+		FinPara
+		Escribir "La suma de las filas es: "
+		Para i = 0 Hasta n - 1 Hacer
+			Escribir  sumaFilas[i], " "
+		FinPara
+		Escribir ""
+		
+		///suma columnas
+		
+		Para i = 0 Hasta n - 1 Hacer /// suma columnas coloco matriz (j,I)
+			suma = 0
+			Para j = 0 Hasta n - 1 Hacer
+				suma = suma + matriz[j, i]
+			FinPara /// suma todas las j y cuando salta al i empieza de cero
+			sumaColumnas[i] = suma
+		FinPara
+		Escribir "La suma de las columnas es: " 
+		Para i = 0 Hasta n - 1  Hacer
+			Escribir Sin Saltar sumaColumnas[i], " "
+		FinPara
+		Escribir ""
+		
+		///suma diagonal ppal
+				Para i = 0 Hasta n - 1 Hacer /// suma diagonal pricnipal
+			suma = 0
+			Para j = 0 Hasta n - 1 Hacer
+				Si i = j Entonces  //// i=j es diagonal ppal
+					suma = suma + matriz[i, j]
+				FinSi
+			FinPara
+			sumaDiagonal = sumaDiagonal + suma
+		FinPara
+		Escribir "La suma de la diagonal ppal es ", sumaDiagonal
+		
+		///suma diagonal secundaria		
+		Para i = 0 Hasta n - 1 Hacer
+			suma=0
+			Para j = 0 Hasta n - 1 Hacer /// suma diagonal secundaria 
+				
+				Si i + j =n-1 Entonces   /// i+j= n-1 formula diagonal secundaria
+					suma = suma + matriz[i, j]
+				fin si
+			fin para
+			sumaDiagsecund = sumaDiagsecund +suma
+		FinPara
+		Escribir "La suma de la diagonal secundaria es ", sumaDiagsecund
+		
+		///condicion magica
+		sumadiagonales= falso
+		filacolumna=falso
+
+		Para i = 0 Hasta n - 1 Hacer
+			para j=0 hasta n-1
+			Si sumaColumnas[i] =sumaFilas[i] entonces 
+				filacolumna= verdadero
+			fin si
+			si 	sumaDiagonal=sumaDiagsecund Entonces
+				sumadiagonales= verdadero
+				
+			FinSi
+		fin para
+		FinPara
+		Si filacolumna=verdadero y sumadiagonales=verdadero entonces
+			Escribir "Es una matriz magica"
+		SiNo
+			Escribir "No es una matriz magica"
+		FinSi
+FinAlgoritmo
+

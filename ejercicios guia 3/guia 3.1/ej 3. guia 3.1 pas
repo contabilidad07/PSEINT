@@ -1,0 +1,22 @@
+Algoritmo ejercicio3
+    Definir num1 , num2 Como Real;
+    Definir resultado Como Logico;
+    Escribir "ingrese un numero";
+    leer num1;
+    Escribir "ingrese otro numero";
+    Leer num2;
+    resultado=Multiploo(num1,num2);
+    Si resultado = Falso Entonces
+        Escribir " es multiploo";
+    SiNo
+        Escribir " no es muultiplo";
+    Fin Si
+	
+FinAlgoritmo
+Funcion resultado=Multiploo(num1,num2)
+    Definir resultado como logico;
+    Si num1 MOD num2 = 0  Entonces
+        resultado=Falso;
+    Fin Si
+	
+FinFuncion

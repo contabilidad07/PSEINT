@@ -1,0 +1,19 @@
+Algoritmo ej2
+	Definir n Como Real
+	Escribir "Ingrese numero"
+	Leer n
+	Si estado(n)<>0 Entonces
+		Escribir "El numero ingresado es: VERDARERO"
+	SiNo
+		Escribir "El numero ingresado es: FALSO"
+	Fin Si
+FinAlgoritmo
+
+Funcion resto = estado(n)
+	Definir resto Como Entero
+	Si (n MOD 2)<>0 Entonces
+		resto=1
+	SiNo
+		resto=0
+	FinSi
+FinFuncion

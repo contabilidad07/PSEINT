@@ -1,0 +1,26 @@
+//Realizar un programa que rellene una matriz de 3x3 con 9 valores ingresados por el usuario y los muestre por pantalla.
+
+Algoritmo ej_1_guia_4_2
+	definir matriz como entero
+	dimension matriz(3,3)
+	relleno(matriz)
+	muestra(matriz)
+fin algoritmo
+subproceso relleno(matriz)
+	definir i,j como entero
+	para i=0 hasta 2 Hacer
+		escribir "ingrese valores para fila " i+1
+		para j=0 hasta 2
+			leer matriz(i,j)
+		fin para
+	FinPara
+Finsubproceso
+subproceso muestra(matriz)
+	definir i,j como entero
+	para i=0 hasta 2 Hacer
+		para j=0 hasta 2
+			escribir " [", matriz(i,j), " ]" sin saltar
+		fin para
+		escribir ""
+	FinPara
+Finsubproceso
